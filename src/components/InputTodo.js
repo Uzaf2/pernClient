@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from "react";
-import Navbar from 'react-bootstrap/Navbar';
 
 const InputTodo = () => {
   const [description, setDescription] = useState("");
@@ -18,6 +17,7 @@ const InputTodo = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)
       });
+      console.log(body);
 
       window.location = "/";
     } catch (err) {
@@ -28,7 +28,6 @@ const InputTodo = () => {
   return (
     <Fragment>
       <nav class="navbar navbar-dark bg-dark" style={style}> Pern Todo List Application </nav>
-      <h1 className="text-center mt-5"></h1>
       <form className="d-flex mt-5" onSubmit={onSubmitForm}>
         <input
           type="text"
